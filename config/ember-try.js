@@ -1,5 +1,6 @@
 /*jshint node:true*/
 module.exports = {
+  useVersionCompatibility: true,
   scenarios: [
     {
       name: 'default',
@@ -8,13 +9,13 @@ module.exports = {
       }
     },
     {
-      name: 'ember-1.13',
+      name: 'lts',
       bower: {
         dependencies: {
-          'ember': '~1.13.0'
+          'ember': '~> 2.4.5'
         },
         resolutions: {
-          'ember': '~1.13.0'
+          'ember': '~> 2.4.5'
         }
       }
     },
