@@ -1,6 +1,6 @@
 {
   "name": "ember-deadpool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An addon with a mouth. ActionCable's companion",
   "directories": {
     "doc": "doc",
