@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var vendorActionCable = 'vendor/actioncable.js';
+
+var fs = require('fs');
+require('shelljs/global');
+
+var package = fs.readFileSync('./package.json', 'utf-8');
+var packageJson = JSON.parse(package);
+
+var actioncableVersion = packageJson['devDependencies']['actioncable'] ||
+                          packageJson['dependencies']['actioncable'];
+
+rm('-f', vendorActionCable);
+ShellString("// ActionCable v." + actioncableVersion + "\n").to(vendorActionCable);
+cat('node_modules/actioncable/dist/actioncable.js').toEnd(vendorActionCable);
+
+echo("Put actioncable " + actioncableVersion + " in " + vendorActionCable);
